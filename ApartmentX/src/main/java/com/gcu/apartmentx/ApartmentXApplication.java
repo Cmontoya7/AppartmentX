@@ -3,7 +3,7 @@ package com.gcu.apartmentx;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.gcu")
 public class ApartmentXApplication {
 
     public static void main(String[] args) {
