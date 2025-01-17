@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <title>Home Page</title>
-  </head>
-  <body>
-    <h1>Home Page</h1>
-	<a th:href = "@{/login}">Login</a></br>
-	<a th:href = "@{/register}">Register</a>
-    
-  </body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+      <head>
+          <meta charset="UTF-8">
+          <title>Welcome to ApartmentX</title>
+      </head>
+      <body>
+            <h3 th:text="${message}">Message goes here</h3>
+            <a th:href = "@{/login}">Login</a></br>
+            <a th:href = "@{/register}">Register</a>
+      </body>
 </html>
