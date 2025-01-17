@@ -1,4 +1,4 @@
-package com.gcu.apartmentx;
+package com.gcu.models;
 
 public class ApartmentXUser {
 	private String email;
