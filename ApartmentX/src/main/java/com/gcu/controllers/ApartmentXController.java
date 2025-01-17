@@ -25,8 +25,12 @@ public class ApartmentXController {
         return "Login";
     }
 
+
+
     @GetMapping("/register")
     public String register() {
     	return "Register";
     }
+
+
 }
