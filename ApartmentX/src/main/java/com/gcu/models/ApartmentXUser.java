@@ -1,6 +1,10 @@
 package com.gcu.models;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class ApartmentXUser {
+	private String username;
 	private String email;
 	private String password;
 	private String nameFirst;
@@ -8,6 +12,12 @@ public class ApartmentXUser {
 	
 	public String getEmail() {
 		return email;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getUsername() {
+		return username;
 	}
 	public void setEmail(String email) {
 		this.email = email;
@@ -38,7 +48,8 @@ public class ApartmentXUser {
 	@Override
 	public String toString() {
 	    return "ApartmentXUser{" +
-	           "email='" + email + '\'' +
+				"username='" + username + '\'' +
+	           ", email='" + email + '\'' +
 	           ", password='" + password + '\'' +
 	           ", nameFirst='" + nameFirst + '\'' +
 	           ", nameLast='" + nameLast + '\'' +

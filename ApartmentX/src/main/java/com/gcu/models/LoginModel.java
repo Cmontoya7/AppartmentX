@@ -24,7 +24,7 @@ public class LoginModel {
     }
 
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     public String getPassword() {
@@ -37,5 +37,12 @@ public class LoginModel {
 
     public void loginTrue() {
         this.loggedIn = true;
+    }
+    @Override
+    public String toString() {
+        return "ApartmentXUser{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

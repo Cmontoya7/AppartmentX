@@ -1,41 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <title>Register</title>
-  </head>
-  <body>
-    <h1>Register</h1>
-	<form th:action="@{/register/submitRegistration}" method="post">
-		<!-- Email Input -->
-		<label for="email">Email:</label><br>
-		<input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
-        <!-- Password Input -->
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
-		<!-- Password Confirm -->
-		<label for="password-confirm">Confirm Password:</label><br>
-		<input type="password" id="password-confirm" name="password-confirm" placeholder="Re-type your password" required><br><br>
-		<!-- First Name -->
-		<label for="name-first">First Name:</label><br>
-		<input type="text" id="name-first" name="nameFirst" placeholder="Enter your first name" required><br><br>
-		<!-- Last Name -->
-		<label for="name-last">Last Name:</label><br>
-		<input type="text" id="name-last" name="nameLast" placeholder="Enter your last name" required><br><br>
-		<!-- Submit Button -->
-		<button type="submit">Submit</button>name
-    </form>
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<title>Register</title>
+</head>
+<body>
+	<div style="font-family: 'Javanese Text', serif">
+		<div th:align="center">
+			<h1 style="color: darkblue; text-align: center; position: fixed; top: 0; width: 100%">ApartmentX Logo</h1>
+		</div>
+		<div class="bs-example">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header">
+					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand" style="color: darkblue">ApartmentX</a>
+				</div>
+				<div id="navbarCollapse" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="/">Home</a></li>
+						<li><h4>Listings</h4></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div th:align="center">
+			<!--/*@thymesVar id="title" type="String"*/-->
+			<h2 th:text="${title}">Default Message Text</h2>
+		</div>
+		<div th:align="center">
+			<form th:action="@{/register/submitRegistration}" method="post">
+				<table>
+					<tr>
+						<!-- UserName Input -->
+						<td><label for="username">Username:</label></td>
+						<td><input type="text" id="username" name="username" placeholder="Enter your Username" required></td>
+					</tr>
+					<tr>
+						<!-- Email Input -->
+						<td><label for="email">Email:</label></td>
+						<td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+					</tr>
+					<tr>
+						<!-- Password Input -->
+						<td><label for="password">Password:</label></td>
+						<td><input type="password" id="password" name="password" placeholder="Enter your Password" required></td>
+					</tr>
+					<tr>
+						<!-- Password Confirm -->
+						<td><label for="password-confirm">Confirm:</label></td>
+						<td><input type="password" id="password-confirm" name="password-confirm" placeholder="Re-type your password" required></td>
+					</tr>
+					<tr>
+						<!-- First Name -->
+						<td><label for="name-first">First Name:</label></td>
+						<td><input type="text" id="name-first" name="nameFirst" placeholder="Enter your first name" required></td>
+					</tr>
+					<tr>
+						<!-- Last Name -->
+						<td><label for="name-last">Last Name:</label></td>
+						<td><input type="text" id="name-last" name="nameLast" placeholder="Enter your last name" required></td>
+					</tr>
+					<tr>
+						<!-- Submit Button -->
+						<td><button type="submit">Submit</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
 </html>
 
 <script>
 	//Password validation
 	document.getElementById("password-confirm").addEventListener("input", function () {
-	        const password = document.getElementById("password").value;
-	        const passwordConfirm = document.getElementById("password-confirm").value;
-	        if (password !== passwordConfirm)
-	            document.getElementById("password-confirm").setCustomValidity("Passwords do not match!");
-	        else
-	            document.getElementById("password-confirm").setCustomValidity("");
-	    });
+		const password = document.getElementById("password").value;
+		const passwordConfirm = document.getElementById("password-confirm").value;
+		if (password !== passwordConfirm)
+			document.getElementById("password-confirm").setCustomValidity("Passwords do not match!");
+		else
+			document.getElementById("password-confirm").setCustomValidity("");
+	});
 </script>
