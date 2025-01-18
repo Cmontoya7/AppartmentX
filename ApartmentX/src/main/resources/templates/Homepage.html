@@ -5,8 +5,47 @@
       <title>Welcome to ApartmentX</title>
     </head>
     <body>
-        <div th:insert="~{layouts/common :: header}"></div>
-
-        <div th:insert="~{layouts/common :: footer}"></div>
+        <div style="font-family: 'Javanese Text'">
+            <div th:align="center">
+                <h1 style="color: blue; text-align: center; position: fixed; top: 0; width: 100%">ApartmentX Logo</h1>
+            </div>
+            <div class="bs=example">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand" style="color: blue">ApartmentX</a>
+                    </div>
+                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                        <tr th:if="${not loggedIn}">
+                            <ul class="nav navbar-nav">
+                                <li><h4>Listings</h4></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/register">Register</a></li>
+                            </ul>
+                        </tr>
+                        <tr th:if="${loggedIn}">
+                            <ul class="nav navbar-nav">
+                                <li><h4>Listings</h4></li>
+                                <li><h4>My Tours</h4> </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><h4 th:text="${username}"></h4></li>
+                            </ul>
+                        </tr>
+                    </div>
+                </nav>
+            </div>
+            <div th:align="center">
+                <!--/*@thymesVar id="title" type="String"*/-->
+                <h2 th:text="${title}">Default Message Text</h2>
+            </div>
+        </div>
     </body>
 </html>
