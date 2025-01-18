@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Home Page</title>
@@ -9,7 +8,7 @@
 <body>
 <div th:fragment="header">
   <div th:align="center">
-    <h1 style="color: darkblue; text-align: center; position: fixed; bottom: 0; width: 100%">ApartmentX</h1>
+    <h1 style="color: blue; text-align: center; position: fixed; top: 0; width: 100%">ApartmentX Logo</h1>
   </div>
   <div class="bs=example">
     <nav class="navbar navbar-default">
@@ -27,8 +26,8 @@
           <li><a href="/">Start Page</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/login" target="_blank">Login</a></li>
-          <li><a href="/register" target="_blank">Register</a></li>
+            <li><a href="/login" target="_blank">Login</a></li>
+            <li><a href="/register" target="_blank">Register</a></li>
         </ul>
       </div>
     </nav>
@@ -37,7 +36,7 @@
   <h2 th:text="${title}">Default Message Text</h2>
 </div>
 <div th:fragment="footer">
-  <h5 style="color: purple; text-align: center; position: fixed; bottom: 0; width: 100%">Copyright 2020 Grand Canyon
+  <h5 style="color: blue; text-align: center; position: fixed; bottom: 0; width: 100%">Copyright 2020 Grand Canyon
     University</h5>
 </div>
 </body>
